@@ -1,0 +1,22 @@
+/*variables*/
+:root {
+    --color-primario: #2E7D32;
+    --color-acento: #4CAF50;
+    --fuente: "inter", sans-serif;
+    
+}
+
+/*reset basico*/
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body{
+    font-family: var(--fuente);
+    font-size: 16px;
+    color: var(--color-primario);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
