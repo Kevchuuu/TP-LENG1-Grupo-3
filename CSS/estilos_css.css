@@ -3,7 +3,8 @@
     --color-primario: #2E7D32;
     --color-acento: #4CAF50;
     --fuente: "inter", sans-serif;
-    
+    --fondo: #E8F5E9;
+    --texto-principal: #1a1a1a; /*SUGERIR OPCIONES*/
 }
 
 /*reset basico*/
