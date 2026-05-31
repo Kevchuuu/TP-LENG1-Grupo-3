@@ -3,7 +3,7 @@
     --color-primario: #2E7D32;
     --color-acento: #4CAF50;
     --fuente: "inter", sans-serif;
-    --fondo: #E8F5E9;
+    --fondo: #F1F5F2;
     --texto-principal: #1a1a1a; /*SUGERIR OPCIONES*/
 }
 
@@ -14,6 +14,7 @@
 }
 
 body{
+    background-color: var(--fondo);
     font-family: var(--fuente);
     font-size: 16px;
     color: var(--color-primario);
