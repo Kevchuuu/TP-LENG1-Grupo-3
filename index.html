@@ -3,35 +3,53 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>EcoRaíz Argentina</title>
+            <link rel="stylesheet" href="./CSS/estilos_css.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+            <title>EcoRaíz</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         </head>
         <body>
             <!-- Encabezado con navegación -->
-            <header>
-                <img src="" alt="Logo de EcoRaíz Argentina">
-                <h1>EcoRaíz Argentina</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="programas.html">Programas</a></li>
-                        <li><a href="contactos.html">Contactos</a></li>
+            <header class="header">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo/green-tree-ver-2.png" alt="Logo de EcoRaíz" class="logo">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a class="main-nav-link" href="index.html">Inicio</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="programas.html">Programas</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="contactos.html">Contactos</a></li>
                     </ul>
                 </nav>
             </header>
-
             <main>
-                <!-- Sección de bienvenida -->
-                <section id="Bienvenida">
-                    <img src="" alt="Naturaleza en Argentina" width="" height="" >
-                    <h2>Somos vida y ambiente</h2>
-                    <p>En EcoRaíz Argentina, nos dedicamos a promover la sostenibilidad y el cuidado del medio ambiente a través de diversas iniciativas y programas educativos. 
-                    Nuestro objetivo es crear conciencia sobre la importancia de preservar nuestros recursos naturales y fomentar prácticas ecológicas en nuestra comunidad.</p>
+                  <!-- Sección hero -->
+                <section class="section-hero" id="Bienvenida">
+                    <div class="section-content">
+                        <div class="hero-details">
+                            <h1 class="title">Bienvenidos a EcoRaíz</h1>
+                            <p class="description">En EcoRaíz, nos dedicamos a promover la sostenibilidad y el cuidado del medio ambiente a través de diversas iniciativas y programas educativos. 
+                            Nuestro objetivo es crear conciencia sobre la importancia de preservar nuestros recursos naturales y fomentar prácticas ecológicas en nuestra comunidad.</p>
+                            <div class="buttons">
+                            <a href="nosotros.html" class="button-about-us">Conocé más</a>
+                            </div>
+                        </div>
+    
+                        <div class="hero-image-wrapper">
+                            <img src="img/paisajes/Vector 3d.png" alt="Imagen del planeta" class="hero-image"        >
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Sección de acción -->
                 <section id="Acción">
-                    <img src="" alt="Equipo de EcoRaíz Argentina" width="" height="" >
+                    <img src="" alt="Equipo de EcoRaíz" width="" height="" >
                     <h2>Defendamos el futuro del planeta</h2>
                     <p>Luchamos contra la destrucción de nuestros bosques y la pérdida de biodiversidad, promoviendo la conservación, la restauración y energias limpias para 
                     nuestros ecosistemas.</p>
@@ -78,26 +96,57 @@
             </main>
 
             <!-- Pie de la Pagina -->
-            <footer>
-                <h4>Contenidos</h4>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="programas.html">Programas</a></li>
-                        <li><a href="contactos.html">Contactos</a></li>
-                    </ul>
-                </nav>
+            <footer class="footer">
+                <div class="container grid grid--3-cols">
+                    <div class="logo-col">
+                        <a href="index.html" class="footer-logo-link">
+                            <img src="img/logo/green-tree.png" alt="Logo de EcoRaíz" class="logo">
+                        </a>
 
-                 <!-- Información de contacto -->
-                <p>Ubicacion:</p> 
-                <p>Av.castillo del papa 353 <br>
-                Buenos Aires, Argentina
-                </p>
-                <p>Comunicate:</p>
-                Tel:<a href="tel:+541123473476">+541123473476</a> <br>
-                Email:<a href="info@manos-verdes.org">info@manos-verdes.org</a>
-                <p>© 2026 EcoRaíz Argentina</p>
+                        <ul class="social-links">
+                            <li>
+                                <a class="footer-social-link" href="#">
+                                    <ion-icon class="footer-social-icon" name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                             <li>
+                                <a class="footer-social-link" href="#">
+                                    <ion-icon class="footer-social-icon" name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+                             <li>
+                                <a class="footer-social-link" href="#">
+                                    <ion-icon class="footer-social-icon" name="logo-twitter"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright">Copyright &copy; 2026 by EcoRaíz Argentina. Todos los derechos reservados.</p>
+                    </div>
+
+                     <!-- Información de contacto -->
+                    <div class="address-col">
+                        <p class="footer-heading">Contactanos</p> 
+                        <address class="contacts">
+                            <p>Av.castillo del papa 353, Buenos Aires, Argentina</p>
+                            <p>
+                                <a href="tel:+541123473476">+541123473476</a> <br/>
+                                <a href="mailto:info@manos-verdes.org">info@manos-verdes.org</a>
+                            </p>
+                        </address>
+                    </div>
+                        
+                    <nav class="nav-col">
+                        <p class="footer-heading">Contenidos</p>
+                         <ul class="footer-nav">
+                            <li><a class="footer-nav-link" href="index.html">Inicio</a></li>
+                            <li><a class="footer-nav-link" href="nosotros.html">Nosotros</a></li>
+                            <li><a class="footer-nav-link" href="programas.html">Programas</a></li>
+                            <li><a class="footer-nav-link" href="contactos.html">Contactos</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </footer>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         </body>
     </html>

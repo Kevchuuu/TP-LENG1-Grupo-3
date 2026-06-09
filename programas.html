@@ -2,28 +2,36 @@
 <html lang ="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-widht">
-        <link rel="stylesheet" href="./CSS/estilos_css.css">
-        <title> Programas - Energías limpias </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="./CSS/estilos_css.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+            <title>Programas</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     
     
     <body>
-        <header>
-                <img src="" alt="Logo de EcoRaíz Argentina">
-                <h1>EcoRaíz Argentina</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="programas.html">Programas</a></li>
-                        <li><a href="contactos.html">Contactos</a></li>
+        <header class="header">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo/green-tree-ver-2.png" alt="Logo de EcoRaíz" class="logo">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a class="main-nav-link" href="index.html">Inicio</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="programas.html">Programas</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="contactos.html">Contactos</a></li>
                     </ul>
                 </nav>
         </header>
 
             <main>
-                <section id="presentacion">
+                <section class="section-intro" id="presentacion">
                 <br>
                 <h2>Energías limpias</h2>
                 <img src="/Imagenes TLMW/image-1.png" alt="imagen de energias limpias" width="" height="">
@@ -33,7 +41,7 @@
                 Impulsar su desarrollo no solo ayuda a reducir el impacto ambiental, sino que también favorece el crecimiento del país y la construcción de un futuro más próspero.</p>
                 </section>
                 
-                <section id="descripcion">
+                <section class="section-program" id="descripcion">
                     <br>
                     <img src="" alt="" width="" height="">
                     <h4>Objetivos del programa</h4>
@@ -41,14 +49,14 @@
 
                 </section>
 
-                <section id="Dirigido">
+                <section class="section-program" id="dirigido">
                     <br>
                     <img src="/Imagenes TLMW/charla_informativa.webp" alt="personal ofreciendo charlas informativas sobre energias renovables" widht="" height="">
                     <h4>¿A quien está Dirigido?</h4>
                     <p>Está dirigido a comunidades rurales, barrios con acceso limitado a servicios energéticos, instituciones educativas y emprendedores interesados en soluciones sostenibles. </p>
                 </section>
 
-                <section id="Participar">
+                <section class="section-program" id="Participar">
                     <br>
                     <h4>¿Como Participar?</h4>
                     <img src="" alt="" width="" height="">
@@ -60,7 +68,7 @@
                     </ul>
                 </section>
 
-                <section id="otros_programas">
+                <section class="section-program" id="otros_programas">
                     <br>
                     <h3><em>Explora otros programas:</em></h3>
                     <ul>
