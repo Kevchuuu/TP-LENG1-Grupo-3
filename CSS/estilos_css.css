@@ -222,6 +222,7 @@ img{
 /* main */
 main{
     background-color:#677676;
+    padding-top: 100px; /*solución temporal, corregir*/
 }
 
 
