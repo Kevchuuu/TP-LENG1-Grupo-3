@@ -161,21 +161,23 @@ img{
     font-family: "Poppins", sans-serif;
 }
 
+
 .section-hero .hero-details .buttons .button-about-us{
    padding: 10px 26px;
    border: 2px solid transparent;
    color: var(--blanco);
+   background-color: var(--gris-oscuro);
    border-radius: var(--border-radius-m);
-   background: var(--gris-oscuro);
    font-weight: var(--font-wight-medium);
    transition: 0.3s ease;
+   text-decoration: none;
 }
 
-.section-hero .hero-details .buttons .button-about-us:hover, 
-.section-hero .hero-details .buttons .button-about-us{
+.section-hero .hero-details .buttons .button-about-us:hover{
    border-color: var(--blanco);
    color: var(--blanco);
    background: transparent;
+   text-decoration: none;
 }
 
 .section-hero .hero-image-wrapper{
