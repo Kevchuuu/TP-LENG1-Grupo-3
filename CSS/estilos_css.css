@@ -156,9 +156,16 @@ section img{
 }
 
 
+/*programas*/
 
 
-
+.otros-programas ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-top: 1rem;
+}
 
 /* hero - index*/
 
