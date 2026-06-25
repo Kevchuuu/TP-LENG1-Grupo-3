@@ -144,6 +144,10 @@ img{
 */
 
 /*section*/
+/*
+mover las images a la izquierda y ubicar el texto en el centro. Intentar ponerle "diseño" a cada seccion.
+
+*/
 
 section{
     text-align: center;
@@ -151,8 +155,9 @@ section{
 
 section img{
     width: 100%;
-    height: auto;
-    margin: 0 auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 350px;
 }
 
 
