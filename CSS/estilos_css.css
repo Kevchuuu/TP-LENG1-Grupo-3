@@ -171,16 +171,29 @@ img{
 }
 
 .section-program img{
-    width: 350px;
+    width: 30%;
     height: 250px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,.25);
-
     flex-shrink: 0;
 }
 
+.program-content{
+    flex: 1;
+}
 
+.program-content h4{
+    font-size: 2rem;
+    color: var(--verde-2);
+    margin-bottom: 15px;
+}
+
+.program-content p{
+    font-size: 1rem;
+    color: var(--gris-oscuro);
+    line-height: 1.8;
+}
 
 /*__section__*/
 
