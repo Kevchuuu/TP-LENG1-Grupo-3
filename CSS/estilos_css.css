@@ -158,6 +158,30 @@ img{
 
 /*__ elementos del body__*/
 
+.section-program{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg,#f6fff8,#dff5e8);
+    border-radius: 20px;
+    
+}
+
+.section-program img{
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+
+    flex-shrink: 0;
+}
+
+
+
 /*__section__*/
 
 
