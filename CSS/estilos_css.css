@@ -155,6 +155,7 @@ button{
 
 /*__ elementos del body__*/
 
+/*section-program*/
 .section-program{
     display: flex;
     align-items: center;
@@ -167,7 +168,7 @@ button{
     
 }
 
-.section-program img{
+.section-program img{ /*imagen descartada temporalmente, queda por si encuentro una imagen adecuada*/
     width: 30%;
     height: 250px;
     object-fit: cover;
@@ -190,6 +191,29 @@ button{
     font-size: 1rem;
     color: var(--gris-oscuro);
     line-height: 1.8;
+}
+
+/*Section Intro*/
+
+.section-intro h3, .section-intro h2, .section-intro p{
+    color: var(--blanco);
+    margin: 1rem;
+}
+
+.section-intro h2{
+    font-size: 2rem;
+}
+
+.section-intro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem;/*solucion temporal ante la superposicion del nav*/
+    gap: 2rem;
+    background: linear-gradient(45deg, #16271f, #3b8764, #27b7be);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    font-family: "poppins", sans-serif;
 }
 
 /*otros programas*/
@@ -238,19 +262,7 @@ section img{
     object-fit: cover;
     /* max-height: 350px; */
 }
-
-/*programas*/
-
-
-.otros-programas ul{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    margin-top: 1rem;
-}
-
-/* hero - index*/
+/* hero - index */
 
 .section-hero{
     height: 100vh;
