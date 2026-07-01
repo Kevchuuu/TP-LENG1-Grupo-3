@@ -296,7 +296,7 @@ header .main-nav {
     line-height: 1.8;
 }
 
-/*Section Intro*/
+/*Section Intro*/ /*section-intro, se cambio la clase por section-hero-2*/
 
 .section-intro h3, .section-intro h2, .section-intro p{
     color: var(--blanco);
