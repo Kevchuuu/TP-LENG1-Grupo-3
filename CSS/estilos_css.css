@@ -78,78 +78,181 @@ body{
 
 
 /* Encabezado y barra de navegacion */
+header {
+    width: calc(100% - 30px); 
+    height: 10vh; 
+    background: linear-gradient(180deg, #080808da, #121514, #3a3e3e); 
+    background-size: 300% 300%;
+    border-radius: var(--border-radius-m); 
+    color: var(--blanco); 
+    margin: 10px 15px; 
+    position: fixed;  
+    display: flex; 
+    align-items: center; 
+    z-index: 1000; 
+    justify-content: space-between; 
+    padding: 0 50px; 
+    filter: drop-shadow(5px 5px 10px black);
+}
 
-.logo{
+.logo {
     max-height: 4rem; 
     width: auto;       
-    display: flex;
-    margin-left: 20%;
-    margin-top: 1%;
+    display: block;
 }
 
-header{
-    width: 98.35%;
-    height: 10vh;
-    background: linear-gradient(45deg, #080808da, #121514, #3a3e3e);
-    background-size: 300% 300%;
-    border-radius: var(--border-radius-m);
+/* Botón hamburguesa estilizado */
+.menu-toggle-btn {
+    display: none; /* Oculto en escritorio */
+    font-size: 1.5rem;
     color: var(--blanco);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    z-index: 5;
-    justify-content: space-between;
-    padding: 20px 100px;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
-
-header .main-nav{
+header .main-nav {
     display: flex;
-    padding: 20px;
     align-items: center;
-    justify-content: space-between;
 }
 
-.main-nav .main-nav-list{
+.main-nav .main-nav-list {
     display: flex;
     gap: 10px;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 
-.main-nav .main-nav-list .main-nav-link{
+.main-nav .main-nav-list .main-nav-link {
     padding: 10px 18px;
     font-size: var(--font-size-m);
     color: var(--blanco);
     border-radius: var(--border-radius-m);
     transition: 0.3s ease;
-}
-
-.main-nav .main-nav-list .main-nav-link:hover{
-    color: var(--blanco);
-    background:  var(--verde-3);
-}
-
-.section-content{
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: var(--site-max-width);
-}
-
-ul{
-    list-style: none;
-}
-
-.main-nav-link{
     text-decoration: none;
+    display: inline-block;
 }
 
-button{
-    cursor: pointer;
-    border: none;
-    background: none;
+.main-nav .main-nav-list .main-nav-link:hover,
+.main-nav .main-nav-list .dropdown-toggle:focus {
+    color: var(--blanco);
+    background: var(--verde-3);
+}
+
+/* =======================================================
+   ESTILOS DEL DROPDOWN (Menú Desplegable)
+   ======================================================= */
+/* Cuadro flotante del Dropdown en Escritorio */
+.main-nav .dropdown-menu {
+    /* Mismo degradado exacto de tu navbar principal */
+    background: linear-gradient(170deg, #080808da, #121514, #3a3e3e); 
+    background-size: 300% 300%;
+    /* Mismo radio de borde redondeado de tu web */
+    border-radius: var(--border-radius-m);
+    margin-top: 15px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+/* Links individuales dentro del dropdown */
+.main-nav .dropdown-item {
+    color: var(--blanco);
+    font-size: var(--font-size-m);
+    padding: 10px 24px;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+/* Hover dentro del dropdown */
+.main-nav .dropdown-item:hover {
+    background-color: var(--verde-3);
+    color: var(--blanco);
+    border-radius: var(--border-radius-m);
+    width: 100%;
+}
+
+/* =======================================================
+   MEDIA QUERY: Comportamiento Responsive (Celulares/Tablets)
+   ======================================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 0 30px;
+    }
+
+    .menu-toggle-btn {
+        display: block; 
+    }
+
+    header .main-nav.collapse:not(.show) {
+        display: none;
+    }
+
+    /* Caja de la Hamburguesa Abierta */
+    header .main-nav.show {
+        display: flex;
+        position: absolute;
+        top: 105%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(45deg, #080808f2, #121514ef, #3a3e3ee6);
+        backdrop-filter: blur(10px);
+        border-radius: var(--border-radius-m);
+        padding: 25px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav .main-nav-list {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-nav .main-nav-list .main-nav-item {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Links principales en celular */
+    .main-nav .main-nav-list .main-nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* EL DROPDOWN ADENTRO DE LA HAMBURGUESA (Diseño Corregido) */
+    .main-nav .dropdown-menu.show {
+        position: static; /* Resetea el flotado de Bootstrap para expandir el menú */
+        transform: none;
+        float: none;
+        width: 100%; /* Mismo ancho exacto que los botones principales */
+        background: linear-gradient(100deg, #080808f2, #121514ef, #3a3e3ee6);
+        border-radius: var(--border-radius-m); /* Redondeado idéntico */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Sombra interna para dar profundidad */
+        margin-top: 8px;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Sublinks de Programas en celular */
+    .main-nav .dropdown-item {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        margin: 4px 0;
+        border-radius: var(--border-radius-m); /* Sub-botones ovalados */
+        font-size: calc(var(--font-size-m) * 0.9);
+    }
+    
+    /* Pequeño ajuste para la flechita del dropdown en mobile */
+    .dropdown-toggle::after {
+        margin-left: 8px;
+        vertical-align: middle;
+    }
 }
 
 
@@ -262,47 +365,63 @@ section img{
     object-fit: cover;
     /* max-height: 350px; */
 }
-/* hero - index */
 
-.section-hero{
+
+/* hero - index*/
+
+.section-hero {
     height: 100vh;
     width: 100%;
     background: linear-gradient(45deg, #16271f, #3b8764, #27b7be);
     background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
+    animation: color 8s ease-in-out infinite;
+    display: flex;
+    justify-content: center; /* Centra el bloque interno horizontalmente */
+    align-items: center; /* Centra el bloque interno verticalmente */
 }
 
-@keyframes color{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
+@keyframes color {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
 }
 
-.section-hero, .section-content{
+/* Contenedor interno: Ahora controla el espacio céntrico real */
+.section-content {
     display: flex;
     align-items: center;
-    min-height: 100vh;
-    color: var(--blanco);
-    justify-content: space-between;
+    justify-content: center; /* Alinea texto e imagen juntos en el centro */
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 40px; /* Margen de seguridad para que no toque los bordes de la pantalla */
+    gap: 100px; /* Separación fija y elegante entre el texto y la imagen */
+    flex-wrap: wrap; /* Permite que en celulares la imagen baje de forma responsive */
 }
 
-.section-hero .hero-details .title{
+/* Bloque de texto equilibrado */
+.section-hero .hero-details {
+    flex: 1;
+    max-width: 550px; /* Evita que el texto se desparrame hacia la izquierda */
+    color: var(--blanco);
+}
+
+.section-hero .hero-details .title {
     margin-top: 8px;
-    max-width: 70%;
     font-size: var(--font-size-xxl);
     font-weight: var(--font-wight-bold);
     color: var(--blanco);
-    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
 }
 
+.section-hero .hero-details .description {
+    max-width: 100%; /* Corregido de 160% a 100% para respetar su columna */
+    margin: 24px 0 40px;
+    font-size: var(--font-size-m);
+    line-height: 1.6;
+}
 
-.section-hero .hero-details .buttons .button-about-us{
+.section-hero .hero-details .buttons .button-about-us {
    padding: 10px 26px;
    border: 2px solid transparent;
    color: var(--blanco);
@@ -311,31 +430,64 @@ section img{
    font-weight: var(--font-wight-medium);
    transition: 0.3s ease;
    text-decoration: none;
+   filter: drop-shadow(5px 5px 10px black);
 }
 
-.section-hero .hero-details .buttons .button-about-us:hover{
+.section-hero .hero-details .buttons .button-about-us:hover {
    border-color: var(--blanco);
    color: var(--blanco);
    background: transparent;
    text-decoration: none;
 }
 
-.section-hero .hero-image-wrapper{
-    max-width: 800px;
-    margin-right: 30px;
+/* Bloque de la imagen equilibrado */
+.section-hero .hero-image-wrapper {
+    flex: 0 0 420px; /* Bajado ligeramente para mejorar la proporción con el texto */
+    max-width: 100%; 
+    display: flex;
+    justify-content: center;
 }
 
-.section-hero .hero-image-wrapper .hero-image{
+.section-hero .hero-image-wrapper .hero-image {
     filter: drop-shadow(5px 5px 10px black);
-}
-
-.section-hero .hero-details .description{
-    max-width: 70%;
-    margin: 24px 0 40px;
-    font-size: var(--font-size-m);
+    width: 150%;
+    height: auto;
+    display: block;
 }
 
 
+@media (max-width: 768px) {
+    
+    /* 1. Cambiamos height fijo por min-height para que la sección se estire si el texto es largo */
+    .section-hero {
+        height: auto; 
+        min-height: 100vh;
+        padding-top: 14vh; /* Espacio extra arriba para que el menú fijo no tape el título "EcoRaíz" */
+        padding-bottom: 40px;
+    }
+
+    /* 2. Cambiamos el orden visual: primero el texto, abajo la imagen */
+    .section-hero .section-content {
+        flex-direction: column;
+        gap: 40px; /* Reducimos el espacio exagerado entre el botón y la imagen */
+        text-align: center; /* Centramos el texto para una estética mobile clásica */
+    }
+
+    /* 3. Permitimos que el bloque de texto use el ancho disponible en el centro */
+    .section-hero .hero-details {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el botón horizontalmente en móviles */
+    }
+
+    /* 4. Achicamos un poco la imagen en celulares para que no ocupe toda la pantalla */
+    .section-hero .hero-image-wrapper {
+        flex: 0 0 auto;
+        width: 80%; /* Ocupa el 80% del ancho del celular */
+        max-width: 300px;
+    }
+}
 
 
 
@@ -344,27 +496,27 @@ section img{
 
 
 /* Footer */
+
 footer {
     width: 98.35%;
-    position: flex;
+    position: relative; /* Corregido: 'flex' no es un valor válido para position, lo ideal es relative o block */
     bottom: 0;
     background: linear-gradient(45deg, #080808da, #121514, #3a3e3e);
     background-size: 300% 300%;
     border-radius: var(--border-radius-m);
     color: var(--blanco);
     padding: 50px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 10px 15px;
+    filter: drop-shadow(5px 5px 10px black);
 }
 
-.footer-logo{
-    width: 500px;
+.footer-logo {
+    width: 100%; /* Ajustado para que responda al contenedor de la columna */
+    max-width: 300px;
     height: auto;     
 }
 
-.container {
+.footer-wrap { /* Cambiado de .container */
     width: 90%;
     margin: auto;
     display: flex;
@@ -373,7 +525,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.container h3::after {
+.footer-wrap h3::after {
     content: "";
     display: block;
     height: 2px;
@@ -382,91 +534,87 @@ footer {
     margin-top: 20px;
 }
 
-.container li a:hover {
+.footer-wrap li a:hover {
     color: var(--verde-3);
     transition: all 0.5s ease;
 }
 
-.col-1 {
+.footer-col-1 { /* Cambiado de .col-1 */
     flex-basis: 30%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.col-1 img {
-    width: 300px;
-    margin-bottom: 15px;
-}
-
-.col-1 p {
-    color: var();
+.footer-col-1 p {
+    color: inherit;
     font-size: 15px;
     line-height: 20px;
+    padding-top: 15px;
 }
 
-.col-2 {
+.footer-col-2 { /* Cambiado de .col-2 */
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.col-2 h3 {
+.footer-col-2 h3 {
     color: var(--blanco);
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.col-2 ul {
+.footer-col-2 ul {
     list-style: none;
 }
 
-.col-2 ul li {
+.footer-col-2 ul li {
     margin-bottom: 10px;
 }
 
-.col-2 ul li a {
+.footer-col-2 ul li a {
     color: var(--blanco);
     text-decoration: none;
 }
 
-.col-3 {
+.footer-col-3 { /* Cambiado de .col-3 */
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.col-3 h3 {
+.footer-col-3 h3 {
     color: var(--blanco);
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.col-3 ul {
+.footer-col-3 ul {
     list-style: none;
 }
 
-.col-3 ul li {
+.footer-col-3 ul li {
     margin-bottom: 10px;
 }
 
-.col-3 ul li a {
+.footer-col-3 ul li a {
     color: var(--blanco);
     text-decoration: none;
 }
 
-.col-4 {
+.footer-col-4 { /* Cambiado de .col-4 */
     flex-basis: 20%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.col-4 h3 {
+.footer-col-4 h3 {
     color: var(--blanco);
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-form{
+form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -474,12 +622,12 @@ form{
     padding-bottom: 20px;
 }
 
-form .far{
+form .far {
     color: #ccc;
     margin-right: 10px;
 }
 
-form input{
+form input {
     background: transparent;
     width: 100%;
     border: none;
@@ -487,7 +635,7 @@ form input{
     outline: none;
 }
 
-form button{
+form button {
     background: transparent;
     border: none;
     color: var(--blanco);
@@ -495,12 +643,12 @@ form button{
     outline: none;
 }
 
-.social-icons{
+.social-icons {
     margin-top: 60px;
     display: flex;
 }
 
-.social-icons a{
+.social-icons a {
     display: flex;
     width: 40px;
     height: 40px;
@@ -517,15 +665,21 @@ form button{
     transition: all 0.5s ease;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
     background: var(--verde-3);
     color: var(--blanco);
     transition: all 0.5s ease;
 }
 
-.footer-2{
+.footer-2 {
     width: 100%;
     color: var(--blanco);
     padding-top: 20px;
     text-align: center;
+}
+
+.footer-col-2 ul, 
+.footer-col-3 ul {
+    padding-left: 0;
+    margin-left: 0;
 }
