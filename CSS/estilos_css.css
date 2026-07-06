@@ -469,8 +469,10 @@ section img{
 }
 
 
-@media (max-width: 768px) {
-    
+@media (max-width: 992px) {
+    /* =======================================================
+                        HERO PRINCIPAL
+   ======================================================= */
     /* 1. Cambiamos height fijo por min-height para que la sección se estire si el texto es largo */
     .section-hero {
         height: auto; 
