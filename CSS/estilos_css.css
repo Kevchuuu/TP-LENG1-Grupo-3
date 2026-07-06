@@ -515,6 +515,46 @@ main{
     line-height: 1.8;
 }
 
+/*section-problems. imagen izq- texto der*/
+
+.section-problems {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.problems {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 100px;
+}
+
+.problems:last-child {
+    margin-bottom: 0;
+}
+
+.problem-content, .problem-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.problem-content h3 {
+    font-size: calc(var(--font-size-m) * 1.3);
+    color: var(--gris-oscuro);
+    margin-bottom: 20px;
+    font-weight: var(--font-wight-bold);
+}
+
+.problem-content p {
+    font-size: var(--font-size-m);
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+
 /*__ elementos del body__*/
 
 /*section-program*/
