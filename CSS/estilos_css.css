@@ -298,26 +298,51 @@ header .main-nav {
 
 /*Section Intro*/ /*section-intro, se cambio la clase por section-hero-2*/
 
-.section-intro h3, .section-intro h2, .section-intro p{
+.section-hero-2 h3, .section-hero-2 h2, .section-hero-2 p{
     color: var(--blanco);
     margin: 1rem;
 }
 
-.section-intro h2{
+.section-hero-2 h2{
     font-size: 2rem;
 }
 
-.section-intro{
+.section-hero-2{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 6rem;/*solucion temporal ante la superposicion del nav*/
     gap: 2rem;
-    background: linear-gradient(45deg, #16271f, #3b8764, #27b7be);
-    background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
     font-family: "poppins", sans-serif;
 }
+
+/*section-hero-2*/
+
+.section-hero-2{
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /*sirve para que la imagen no se repita en caso de no llenar el espacio de su seccion*/
+}
+
+#presentacion-energias{
+    background-image:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url(../img/paisajes/energias_renovables.jpg);
+}
+
+#presentacion-educacion{
+    background-image:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url(../img/paisajes/educacion_ambiental_3.jpg);
+}
+
+#presentacion-conservacion{
+    background-image:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url(../img/paisajes/andes_conservacion.jpg);
+}
+
 
 /*otros programas*/
 .otros-programas{
