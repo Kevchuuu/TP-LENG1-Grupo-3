@@ -530,7 +530,14 @@ main{
     line-height: 1.8;
 }
 
+/*intro-content*/
+.intro-content{
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    
 
+}
 
 
 
