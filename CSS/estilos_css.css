@@ -584,7 +584,150 @@ section img{
 }
 
 
+/*=============== SECCIÓN PROGRAMAS COMPARTIDO TAMBIEN EN NOSOTROS CARTAS DE FUNDADORES (VERTICAL / RESPONSIVE EN TODO DISPOSITIVO) ===============*/
+.section-programs-wrapper {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  background-color: var(--gris-oscuro);
+  margin: 0;
+}
 
+.section-title {
+  font-size: var(--font-size-xl, 2rem);
+  color: var(--blanco);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card__container {
+  display: grid;
+  /* Escritorio: 3 columnas. En pantallas medianas pasa a 2 y en celulares a 1 sola de forma automática */
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 4rem 2rem;
+  width: 100%;
+  max-width: var(--site-max-width, 1120px);
+  justify-content: center;
+  filter: drop-shadow(5px 5px 10px black);
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden; /* Esconde el texto inicialmente */
+  justify-self: center;
+  width: 100%;
+  max-width: 348px;
+  border-radius: 1.5rem;
+}
+
+/* Imagen en formato vertical (Portrait) constante en cualquier resolución */
+.card__img {
+  width: 100%;
+  height: 550px; /* Alto vertical optimizado */
+  object-fit: cover;
+  border-radius: 1.5rem;
+  transition: transform .4s ease;
+}
+
+/* Caja de datos flotante inteligente (Usa porcentajes, no valores fijos) */
+.card__data {
+  width: calc(100% - 3rem);
+  background-color: var(--container-color, #fff);
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 1.5rem; /* Se posiciona con respecto al fondo de la tarjeta */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  /* La empujamos hacia abajo un 70% de su propia altura para ocultarla de forma elástica */
+  transform: translateY(70%); 
+  transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1), opacity .4s ease;
+}
+
+.card__description {
+  display: block;
+  font-size: var(--small-font-size, .813rem);
+  color: var(--verde-3, #20ca9a);
+  font-weight: 500;
+  margin-bottom: .25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size, 1.25rem);
+  font-weight: 600;
+  color: var(--title-color, hsl(0, 0%, 15%));
+  margin-bottom: .5rem;
+}
+
+.card__text {
+  font-size: var(--small-font-size, .813rem);
+  color: var(--text-color, hsl(0, 0%, 35%));
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card__button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--small-font-size, .813rem);
+  font-weight: 500;
+  color: var(--verde-2, #3a7d5c);
+  transition: color .3s;
+}
+
+.card__button:hover {
+  text-decoration: underline;
+  color: var(--verde-1, #2c5a45);
+}
+
+/*=============== INTERACCIONES HOVER (MÉTODO ULTRA RESPONSIVE) ===============*/
+
+/* Al pasar el mouse, permitimos que la caja sobresalga de la tarjeta si es necesario */
+.card__article:hover {
+  overflow: initial;
+}
+
+/* Al sacar el mouse, esperamos que baje la tarjeta antes de ocultar el overflow */
+.card__article:not(:hover) {
+  transition-delay: .3s;
+  overflow: hidden;
+}
+
+/* Efecto hover sobre la data: sube limpiamente a su posición natural */
+.card__article:hover .card__data {
+  opacity: 1;
+  transform: translateY(0); /* Sube exactamente lo necesario sin importar cuántas líneas tenga el texto */
+}
+
+/* Ligero zoom a la foto vertical de fondo para darle vida */
+.card__article:hover .card__img {
+  transform: scale(1.03);
+}
+
+/*=============== DETALLES EXCLUSIVOS MÓVIL ===============*/
+@media screen and (max-width: 768px) {
+  .section-programs-wrapper {
+    padding-block: 3rem;
+  }
+  .card__container {
+    grid-template-columns: 1fr; /* Una sola columna: se apilan verticalmente perfectas */
+    gap: 5rem 0; /* Espaciado saludable entre tarjetas apiladas */
+  }
+  .card__article {
+    max-width: 100%; /* Aprovecha bien el ancho del celular */
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .section-programs-wrapper { margin-inline: 1rem; }
+  .card__data { padding: 1.2rem 1rem; width: calc(100% - 2rem); }
+  .card__img { height: 380px; } /* Un toque más bajas en pantallas diminutas */
+}
 
 
 /* Footer */
