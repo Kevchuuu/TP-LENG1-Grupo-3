@@ -488,7 +488,32 @@ main{
                 background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/hero/view-diverse-adolescents-practicing-health-wellness-activities-themselves-their-community.jpg) no-repeat center center / cover;
 }
 
+/*section-midle. Centramos el contenido y agregamos detalles elegantes*/
 
+.section-middle {
+    background-color: #d5ffe5; /* Un fondo blanco-verdoso ecológico muy sutil */
+    padding: 90px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-content-action {
+    max-width: 850px; /* Evita que las líneas sean infinitas, mejorando la lectura */
+    text-align: center;
+}
+
+.section-content-action h2 {
+    font-size: var(--font-size-xl);
+    color: var(--verde-2);
+    margin-bottom: 25px;
+    font-weight: var(--font-wight-bold);
+}
+
+.section-content-action p {
+    font-size: var(--font-size-m);
+    color: #444;
+    line-height: 1.8;
+}
 
 /*__ elementos del body__*/
 
