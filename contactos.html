@@ -57,61 +57,88 @@
                 </div>
             </section>
 
-            <h2>Adherirse como voluntario/a:</h2>
-            <p>Completa el formulario o escribinos a: <a href="info@manos-verdes.org">info@manos-verdes.org</a> </p>
-
-            <form action="#" method="post">
-                <label for="nombre">Nombre y Apellido:</label>
-                <input type="text" 
-                    id="nombre" 
-                    name="nombre" 
-                    placeholder="Ej: Agustin Hernandez" 
-                    required> 
-                <br>
-                <label for="email">Correo electronico:</label>
-                <input type="email" 
-                    name="email" 
-                    id="email" 
-                    placeholder="Ej; agustinhernandez@gmail.com"
-                    required>
-                <br>
-                <label for="telefono">Telefono:</label>
-                <input type="tel" 
-                    name="telefono" 
-                    id="telefono" 
-                    placeholder="Ej; +54 9 11 7564 6957">
-                <br>
-                <label for="programa">Programa de interes:</label>
-                <select name="programa" id="programa" >
-                    <option value="">Elegir programa...</option>
-                    <option value="el">Energías limpias</option>
-                    <option value="cde">Conservación de Ecosistemas</option>
-                    <option value="ea">Educación Ambiental</option>
-
-
-                </select>
-
-            </form>
+            <!-- Contenido Principal: Formulario + Mapa -->
+            <section class="contact-grid-container">
+        
+                <!-- Bloque Izquierdo: Formulario Moderno (Estructura Final) -->
+                <div class="contact-form-wrapper">
+                    <h2>Envianos un mensaje</h2>
+                    <p class="form-lead">Completá el formulario y nuestro equipo te responderá en menos de 48 horas hábiles.</p>
     
-            <p>
-                <strong>Direccion:</strong> Av.castillo del papa 353, Buenos Aires, Argentina
-            </p>
+                    <!-- FORMULARIO -->
+                    <form action="#" method="POST" id="contactForm" class="d-flex flex-column gap-3" novalidate>
+                        <!-- Fila 1: Nombre y Apellido -->
+                        <div class="form-group-row">
+                            <div class="input-container m-0">
+                            <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan" required>
+                            </div>
+                            <div class="input-container m-0">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" placeholder="Ej. Pérez" required>
+                            </div>
+                        </div>
 
-            <p>
-                <strong>Email:</strong> <a href="info@manos-verdes.org">info@manos-verdes.org</a>
-            </p>
+                        <!-- Fila 2: Correo Electrónico -->
+                        <div class="input-container m-0">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+                            <small id="emailHelp" class="form-text text-muted mt-1">Descuida, nunca compartiremos este correo con nadie.</small>
+                        </div>
 
-            <p>
-                <strong>Telefono:</strong><a href="tel:+541123473476">+541123473476</a>
-            </p>
+                        <!-- Fila 3: Asunto -->
+                        <div class="input-container m-0">
+                            <label for="inlineFormCustomSelectPref">¿Cómo querés colaborar?</label>
+                            <select name="asunto" class="form-select custom-select" id="inlineFormCustomSelectPref" required>
+                                <option value="" disabled selected>Seleccioná una opción</option>
+                                <option value="voluntariado">Quiero ser Voluntario</option>
+                                <option value="donacion">Donaciones o Alianzas Corporativas</option>
+                                <option value="educacion">Talleres o Escuelas</option>
+                                <option value="consulta">Consulta General</option>
+                            </select>
+                        </div>
 
-            <p>
-                <strong>Redes sociales:</strong>
-                <a href="https://www.instagram.com/raices.del.futuro.ok" target="_blank">Instagram</a>
-            </p>
+                        <!-- Fila 4: Mensaje -->
+                        <div class="input-container m-0">
+                            <label for="mensaje">Tu mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribí acá tus dudas, propuestas o comentarios..." required></textarea>
+                        </div>
+
+                        <!-- Fila 5: Botón de Envío -->
+                        <div class="submit-button-container">
+                            <button type="submit" class="btn-submit-form">Enviar propuesta</button>
+                        </div>
+                        <!-- Contenedor para el mensaje de éxito de contacto -->
+                        <div id="contactSuccessMessage" class="mt-3 text-center" style="display: none; color: var(--verde-1); font-weight: 600;"></div>
+                    </form>
+                </div>
+
+                <!-- Bloque Derecho: Info de Sede + Mapa Embebido -->
+                <div class="contact-info-map-wrapper">
+                    <div class="sede-details-card">
+                        <h3>Nuestra Sede Central</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Av.castillo del papa 353, Buenos Aires, Argentina</p>
+                        <p><i class="fas fa-envelope"></i>info@manos-verdes.org</p>
+                        <p><i class="fas fa-phone"></i> +54 (11) 2347-3476</p>
+                    </div>
+            
+                    <!-- Contenedor del mapa con bordes redondeados estilizados -->
+                    <div class="map-iframe-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.8122851493016!2d-58.62479532422049!3d-34.65942477293529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc761b0c00001%3A0x2ffb2e7742d4a6f8!2sPlaza%20General%20San%20Mart%C3%ADn%2C%20Mor%C3%B3n!5e0!3m2!1ses-419!2sar!4v1719875000000!5m2!1ses-419!2sar" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
         </main>
         
-         <!-- Pie de la Pagina -->
+        <!-- Pie de la Pagina -->
         <footer>
             <div class="footer-wrap"> 
                 <div class="footer-col-1"> 
