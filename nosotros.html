@@ -295,7 +295,7 @@
                 </div>
             </section>
 
-        <!-- Pie de la Pagina -->
+         <!-- Pie de la Pagina -->
         <footer>
             <div class="footer-wrap"> 
                 <div class="footer-col-1"> 
@@ -328,11 +328,13 @@
 
 
                 <div class="footer-col-5"> <h3>Escribinos</h3>
-                    <form>
+                    <form id="newsletterForm" novalidate>
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder="Ingresa tu email" required>
-                        <button><i class="fas fa-arrow-right"></i></button>
+                        <input type="email" id="newsletterEmail" placeholder="Ingresa tu email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
                     </form>
+                    <!-- Contenedor para el mensaje de éxito del newsletter -->
+                    <div id="newsletterSuccessMessage" class="mt-2" style="display: none; color: #27b7be; font-size: 0.85rem; font-weight: 500;"></div>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>

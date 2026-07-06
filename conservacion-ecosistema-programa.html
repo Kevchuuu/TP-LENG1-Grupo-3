@@ -110,12 +110,12 @@
             </section>    
         </main>
 
-        <!-- Pie de la Pagina -->
+         <!-- Pie de la Pagina -->
         <footer>
             <div class="footer-wrap"> 
                 <div class="footer-col-1"> 
                     <img src="img/logo/green-tree-ver-2.png" class="footer-logo" alt="Logo de EcoRaíz">
-                    <p>Seguí nuestras redes sociales para ver más de nuestros contenidos y publicaciones.</p>
+                    <p>Seguí nuestras redes sociales para ver mas de nuestros contenidos y publicaciones.</p>
                 </div>
                 <div class="footer-col-2"> <h3>Contenidos</h3>
                     <ul>
@@ -129,7 +129,7 @@
                     <ul>
                         <li><a href="./programas.html">Energías limpias</a></li>
                         <li><a href="./conservacion-ecosistema-programa.html">Cuidado de ecosistemas</a></li>
-                        <li><a href="./Educacion-ambiental-programa.html">Educación ambiental</a></li>
+                        <li><a href="./reforestacion-programa.html">Educación ambiental</a></li>
                     </ul>
                 </div>
 
@@ -137,16 +137,19 @@
                     <ul>
                         <li><a href="tel:+541123473476">+541123473476</a></li>
                         <li><a href="mailto:info@manos-verdes.org">info@manos-verdes.org</a></li>
-                        <li><address>Av. Castillo del Papa 353, Buenos Aires, Argentina</address></li>
+                        <li><address>Av.castillo del papa 353, Buenos Aires, Argentina</address></li>
                     </ul>
                 </div>
 
+
                 <div class="footer-col-5"> <h3>Escribinos</h3>
-                    <form>
+                    <form id="newsletterForm" novalidate>
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder="Ingresa tu email" required>
-                        <button><i class="fas fa-arrow-right"></i></button>
+                        <input type="email" id="newsletterEmail" placeholder="Ingresa tu email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
                     </form>
+                    <!-- Contenedor para el mensaje de éxito del newsletter -->
+                    <div id="newsletterSuccessMessage" class="mt-2" style="display: none; color: #27b7be; font-size: 0.85rem; font-weight: 500;"></div>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -161,6 +164,6 @@
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="./JS/main.js"></script>  
+        <script src="./JS/main.js"></script>
     </body>
 </html>
