@@ -145,17 +145,15 @@ header .main-nav {
    ======================================================= */
 /* Cuadro flotante del Dropdown en Escritorio */
 .main-nav .dropdown-menu {
-    /* Mismo degradado exacto de tu navbar principal */
     background: linear-gradient(170deg, #080808da, #121514, #3a3e3e); 
     background-size: 300% 300%;
-    /* Mismo radio de borde redondeado de tu web */
     border-radius: var(--border-radius-m);
     margin-top: 15px; 
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     padding: 10px 0;
+    border: none;
 }
 
-/* Links individuales dentro del dropdown */
 .main-nav .dropdown-item {
     color: var(--blanco);
     font-size: var(--font-size-m);
@@ -164,7 +162,6 @@ header .main-nav {
     transition: 0.3s ease;
 }
 
-/* Hover dentro del dropdown */
 .main-nav .dropdown-item:hover {
     background-color: var(--verde-3);
     color: var(--blanco);
@@ -173,82 +170,73 @@ header .main-nav {
 }
 
 /* =======================================================
-   MEDIA QUERY: Comportamiento Responsive (Celulares/Tablets)
+   MEDIA QUERY: Comportamiento Responsive Barra de Navegacion (Celulares/Tablets)
    ======================================================= */
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
     header {
-        padding: 0 30px;
+        padding: 0 20px;
     }
 
+    /* Muestra el botón hamburguesa */
     .menu-toggle-btn {
-        display: block; 
+        display: inline-block; 
     }
 
-    header .main-nav.collapse:not(.show) {
-        display: none;
-    }
-
-    /* Caja de la Hamburguesa Abierta */
-    header .main-nav.show {
-        display: flex;
+    /* Forzamos a que el colapso se posicione de forma absoluta debajo del header */
+    header .main-nav.collapse {
         position: absolute;
         top: 105%;
         left: 0;
         width: 100%;
         background: linear-gradient(45deg, #080808f2, #121514ef, #3a3e3ee6);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
         border-radius: var(--border-radius-m);
-        padding: 25px 0;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        transition: all 0.35s ease; /* Transición suave de Bootstrap */
     }
 
+    /* Dejamos que Bootstrap controle el flujo del display, pero aseguramos la lista interna */
     .main-nav .main-nav-list {
         flex-direction: column;
         width: 100%;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 20px 0; /* Padding interno de la caja abierta */
     }
 
     .main-nav .main-nav-list .main-nav-item {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Links principales en celular */
-    .main-nav .main-nav-list .main-nav-link {
-        width: 100%;
+        width: 80%; /* Más espacio de click en pantallas chicas */
         text-align: center;
     }
 
-    /* EL DROPDOWN ADENTRO DE LA HAMBURGUESA (Diseño Corregido) */
-    .main-nav .dropdown-menu.show {
-        position: static; /* Resetea el flotado de Bootstrap para expandir el menú */
-        transform: none;
-        float: none;
-        width: 100%; /* Mismo ancho exacto que los botones principales */
-        background: linear-gradient(100deg, #080808f2, #121514ef, #3a3e3ee6);
-        border-radius: var(--border-radius-m); /* Redondeado idéntico */
-        box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Sombra interna para dar profundidad */
-        margin-top: 8px;
-        padding: 10px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .main-nav .main-nav-list .main-nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
     }
 
-    /* Sublinks de Programas en celular */
+    /* Dropdown integrado al menú vertical */
+    .main-nav .dropdown-menu {
+        position: static; /* Rompe el flotado absoluto original de Bootstrap */
+        transform: none;
+        float: none;
+        width: 100%;
+        background: linear-gradient(100deg, #080808f2, #121514ef, #3a3e3ee6);
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        margin-top: 8px;
+        padding: 5px 0;
+        border: none;
+    }
+
     .main-nav .dropdown-item {
         width: 100%;
         text-align: center;
         padding: 12px 0;
-        margin: 4px 0;
-        border-radius: var(--border-radius-m); /* Sub-botones ovalados */
-        font-size: calc(var(--font-size-m) * 0.9);
+        border-radius: var(--border-radius-m);
+        font-size: calc(var(--font-size-m) * 0.95);
     }
     
-    /* Pequeño ajuste para la flechita del dropdown en mobile */
     .dropdown-toggle::after {
         margin-left: 8px;
         vertical-align: middle;
