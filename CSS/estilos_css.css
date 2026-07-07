@@ -1195,7 +1195,7 @@ section img{
 
 /* Footer */
 footer {
-    width: 98.35%;
+    width: calc(100% - 30px); 
     position: relative; /* Corregido: 'flex' no es un valor válido para position, lo ideal es relative o block */
     bottom: 0;
     background: linear-gradient(45deg, #080808da, #121514, #3a3e3e);
