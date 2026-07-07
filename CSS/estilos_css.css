@@ -72,12 +72,10 @@ body{
 }
 
 /* logo barra de navegación */
-.logo{
+.logo {
     max-height: 4rem; 
     width: auto;       
-    display: flex;
-    margin-left: 20%;
-    margin-top: 1%;
+    display: block;
 }
 
 /* listas*/
@@ -197,12 +195,12 @@ header .main-nav {
 /* =======================================================
    MEDIA QUERY: Comportamiento Responsive Barra de Navegacion (Celulares/Tablets)
    ======================================================= */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
     header {
         padding: 0 20px;
     }
 
-    /* Muestra el botón hamburguesa */
+    /* Muestra el botón hamburguesa en tablets y celulares */
     .menu-toggle-btn {
         display: inline-block; 
     }
@@ -267,7 +265,6 @@ header .main-nav {
         vertical-align: middle;
     }
 }
-
 
 
 /* hero - index*/
