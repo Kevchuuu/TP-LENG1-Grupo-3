@@ -591,17 +591,17 @@ main{
 
 /*__ elementos del body__*/
 
-/*section-program*/
-.section-program{
+/* section-program */
+.section-program {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2.5rem;
     max-width: 1200px;
-    margin: 3rem;
+    margin: 3rem auto; /*CAMBIO: 'auto' centra el bloque horizontalmente */
     padding: 2rem;
-    background: linear-gradient(135deg,#f6fff8,#dff5e8);
-    border-radius: 20px;
-    
+    background: linear-gradient(135deg, #f6fff8, #dff5e8);
+    border-radius: 20px; 
 }
 
 .section-program img{ /*imagen descartada temporalmente, queda por si encuentro una imagen adecuada*/
@@ -629,13 +629,15 @@ main{
     line-height: 1.8;
 }
 
+.section-program ul{
+    list-style: circle;
+}
+
 /*intro-content*/
 .intro-content{
     font-size: 1rem;
     color: black;
     text-align: center;
-    
-
 }
 
 
