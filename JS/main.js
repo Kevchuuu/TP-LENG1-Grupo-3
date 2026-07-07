@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearError = (inputElement) => {
         const container = inputElement.closest(".input-container") || inputElement.parentElement;
         const existingError = container.querySelector(".error-message");
-        if (existingError) existingError.remove()
+        if (existingError) existingError.remove();
         inputEement.classList.remove("is-invalid");
         if (inputElement.value.trim() !== "") {
             inputElement.classList.add("is-valid");
