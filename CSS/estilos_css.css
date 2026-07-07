@@ -687,6 +687,324 @@ section img{
     /* max-height: 350px; */
 }
 
+/* =======================================================
+   NUEVA SECCIÓN: LÍNEA DE TIEMPO VERTICAL (TIMELINE)
+   ======================================================= */
+.timeline-section {
+    padding: 80px 20px;
+    background-color: #fdfdfd;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+/* La línea central vertical */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--verde-1);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Contenedores de los hitos */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+/* Los puntos en la línea central */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #ffffff;
+    border: 4px solid var(--verde-2);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+/* Posicionamiento Izquierda y Derecha */
+.timeline-left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Corregir los puntos para los bloques de la derecha */
+.timeline-right .timeline-dot {
+    left: -10px;
+}
+
+/* Los bloques con las fechas flotantes */
+.timeline-date {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--verde-2);
+    margin-bottom: 8px;
+}
+
+/* Caja de contenido interno */
+.timeline-content {
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--verde-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+    font-size: var(--font-size-m);
+    color: var(--verde-2);
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: var(--font-size-s);
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Espacio controlado para las futuras fotos de la línea de tiempo */
+.timeline-img-placeholder {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 180px;
+}
+
+.timeline-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Efectos Hover Interactivos */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 90, 69, 0.15);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: var(--verde-3);
+}
+
+/* RESPONSIVE: Transforma la línea de tiempo a una sola columna en celulares */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        text-align: left;
+    }
+    
+    .timeline-left {
+        left: 0;
+    }
+    
+    .timeline-right {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 21px;
+        right: auto;
+    }
+}
+
+
+/* =======================================================
+   NUEVA SECCIÓN: TARJETAS DE PILARES (MODERN GRID CARDS)
+   ======================================================= */
+.section-title.gris{
+    color: var(--gris-oscuro);
+}
+
+.pilares-section {
+    padding: 80px 20px;
+    background-color: #d5ffe5;
+    margin-bottom: 50px;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+}
+
+.pilar-card {
+    position: relative;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+/* Decoración superior con tu color de acento brillante */
+.pilar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--verde-1), var(--verde-3));
+}
+
+/* Badge numérico elegante */
+.pilar-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-bold);
+    color: var(--verde-1);
+    opacity: 0.7;
+}
+
+/* Icono redondo contenedor */
+.pilar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background-color: rgba(72, 161, 121, 0.1);
+    color: var(--verde-2);
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.pilar-card h3 {
+    font-size: var(--font-size-m);
+    color: var(--verde-2);
+    margin-bottom: 15px;
+}
+
+.pilar-card p {
+    font-size: var(--font-size-s);
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Capa de imagen oculta que se revela con transiciones finas */
+.pilar-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+}
+
+.pilar-bg-image::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(44, 90, 69, 0.95), rgba(44, 90, 69, 0.8));
+    top: 0;
+    left: 0;
+}
+
+.pilar-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* COMPORTAMIENTO INTERACTIVO HOVER */
+.pilar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(44, 90, 69, 0.2);
+}
+
+/* Cuando pases el mouse, cambiamos las propiedades de los textos para legibilidad sobre foto */
+.pilar-card:hover h3, 
+.pilar-card:hover p,
+.pilar-card:hover .pilar-badge {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.pilar-card:hover .pilar-icon {
+    background-color: var(--verde-3);
+    color: var(--verde-2);
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Mostramos la imagen de fondo de manera fluida */
+.pilar-card:hover .pilar-bg-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/*=============== AGREGADOS EXCLUSIVOS PARA LA SECCIÓN EQUIPO ===============*/
+
+/* Contenedor de las redes sociales */
+.card__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #e2e8f0; /* Una línea sutil divisoria arriba de los links */
+  padding-top: 0.75rem;
+}
+
+/* Estilo para los links de GitHub y LinkedIn */
+.social-link {
+  font-size: var(--small-font-size, .813rem);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--verde-2, #3a7d5c);
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--verde-3, #20ca9a); /* Brilla con tu color destacado al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Ajuste opcional por si el nombre de la persona queda muy grande */
+.user-name {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
 
 /*=============== SECCIÓN PROGRAMAS COMPARTIDO TAMBIEN EN NOSOTROS CARTAS DE FUNDADORES (VERTICAL / RESPONSIVE EN TODO DISPOSITIVO) ===============*/
 .section-programs-wrapper {
