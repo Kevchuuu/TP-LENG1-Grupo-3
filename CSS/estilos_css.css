@@ -359,6 +359,7 @@ header .main-nav {
 }
 
 
+
 @media (max-width: 992px) {
     /* =======================================================
                         HERO PRINCIPAL
@@ -487,6 +488,8 @@ main{
 .educacion-hero {
                 background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/hero/view-diverse-adolescents-practicing-health-wellness-activities-themselves-their-community.jpg) no-repeat center center / cover;
 }
+
+
 
 /*section-midle. Centramos el contenido y agregamos detalles elegantes*/
 
@@ -830,6 +833,24 @@ section img{
   .card__img { height: 380px; } /* Un toque más bajas en pantallas diminutas */
 }
 
+/*section-help*/
+
+.section-help {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.help-content h2 {
+    font-size: var(--font-size-xl);
+    color: var(--gris-oscuro);
+    margin-bottom: 15px;
+}
+
+.help-content p {
+    font-size: var(--font-size-m);
+    color: #555;
+    margin-bottom: 30px;
+}
 
 /* Footer */
 footer {
