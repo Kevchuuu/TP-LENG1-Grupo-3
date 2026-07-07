@@ -573,6 +573,18 @@ main{
     transform: translateY(-2px);
 }
 
+.problem-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--border-radius-m);
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+.marina.problems {
+    flex-direction: row-reverse;
+}
+
 
 /*__ elementos del body__*/
 
