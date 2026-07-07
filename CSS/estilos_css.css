@@ -1527,3 +1527,35 @@ form button {
     border: 2px solid #dde4e1;
 }
 
+/* Botones */
+.social-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Colores por red social */
+.instagram-btn  { background: linear-gradient(135deg, #E1306C, #FD1D1D, #833AB4); }
+.facebook-btn   { background: #1877F2; }
+.twitter-btn    { background: #1DA1F2; }
+
