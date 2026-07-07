@@ -1,4 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contactForm");
+    const newsletterForm = document.getElementById("newsletterForm");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const showError = (inputElement, message) => {
+        const container = inputElement.closest(".input-container") || inputElement.parentElement;
+        clearError(inputElement);
+        const errorText = document.createElement("small");
+        errorText.className = "text-danger error-message d-block mt-1";
+        errorText.style.fontWeight = "500";
+        errorText.innerText = message;
+        container.appendChild(errorText);
+        inputElement.classList.add("is-invalid");
+        inputElement.classList.remove("is-valid");
+    };
+
+    const clearError = (inputElement) => {
+        const container = inputElement.closest(".input-container") || inputElement.parentElement;
+        const existingError = container.querySelector(".error-message");
+        if (existingError) existingError.remove();
+        inputElement.classList.remove("is-invalid");
+        if (inputElement.value.trim() !== "") {
+            inputElement.classList.add("is-valid");
+        }
+    };
+
 
     // --- FORMULARIO DE CONTACTO ---
     if (contactForm) {
