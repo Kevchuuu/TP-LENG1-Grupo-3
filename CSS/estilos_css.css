@@ -553,6 +553,25 @@ main{
     margin-bottom: 30px;
 }
 
+/* El botón solicitado para los artículos */
+.btn-problem {
+    display: inline-block;
+    padding: 10px 28px;
+    background-color: var(--verde-2);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: var(--font-wight-medium);
+    border-radius: var(--border-radius-m);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(44, 90, 69, 0.2);
+}
+
+.btn-problem:hover {
+    background-color: var(--verde-1);
+    color: var(--blanco);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
 
 
 /*__ elementos del body__*/
