@@ -25,6 +25,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    
+    const validateField = (input) => {
+        if (!input) return false;
+        const value = input.value.trim();
+
+        if (input.hasAttribute("required") && value === "") {
+            showError(input, "Este campo es obligatorio.");
+            return false;
+        }
+        if (input.id === "nombre" || input.id === "apellido") {
+            if (value.length < 3) {
+                showError(input, "Debe tener al menos 3 caracteres.");
+                return false;
+            }
+        }
+        if (input.type === "email") {
+            if (!emailRegex.test(value)) {
+                showError(input, "Por favor, ingresá un correo electrónico válido.");
+                return false;
+            }
+        }
+        if (input.id === "mensaje") {
+            if (value.length < 10) {
+                showError(input, "El mensaje debe ser más descriptivo (mínimo 10 caracteres).");
+                return false;
+            }
+        }
+        clearError(input);
+        return true;
+    };
 
     // --- FORMULARIO DE CONTACTO ---
     if (contactForm) {
