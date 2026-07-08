@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newsletterForm = document.getElementById("newsletterForm");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    /* Muestra el error */
     const showError = (inputElement, message) => {
         const container = inputElement.closest(".input-container") || inputElement.parentElement;
         clearError(inputElement);
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         inputElement.classList.remove("is-valid");
     };
 
+    /* Limpia el error */
     const clearError = (inputElement) => {
         const container = inputElement.closest(".input-container") || inputElement.parentElement;
         const existingError = container.querySelector(".error-message");
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    
+    /* valida los datos del form */
     const validateField = (input) => {
         if (!input) return false;
         const value = input.value.trim();
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     };
 
-    // --- FORMULARIO DE CONTACTO ---
+    // --- FUNCIONALIDAD PARA FORMULARIO DE CONTACTO ---
     if (contactForm) {
         const fields = contactForm.querySelectorAll("input, select, textarea");
         const successDiv = document.getElementById("contactSuccessMessage");
@@ -96,9 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- FORMULARIO DEL FOOTER (NEWSLETTER) ---
+    // --- FUNCIONALIDAD A PARTE PARA EL FORMULARIO DEL FOOTER (NEWSLETTER) ---
     if (newsletterForm) {
-        // Buscamos el input de manera segura para evitar que falle el script
+        // se busca el input de manera segura para evitar que falle el script
         const newsletterEmail = document.getElementById("newsletterEmail") || newsletterForm.querySelector("input[type='email']");
         const newsletterSuccess = document.getElementById("newsletterSuccessMessage");
 

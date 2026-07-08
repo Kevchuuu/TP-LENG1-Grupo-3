@@ -1,22 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*
-objetivos (puede variar)
-- mover las images a la izquierda y ubicar el texto en el centro. Intentar ponerle "diseño" a cada seccion.
-- agregar imagen de fondo en la tabla de resultados
-- agregar un boton con diseño para la seccion de programas en index
- 
+/*se importa las fuentes al css ya que al utilizar bootstrap en las paginas los atributos de class usados para adaptar partes de bootstrap en ciertos lugares 
+pisa de alguna forma el diseño de css y pone su fuentes determinadas con esto pisariamos esa desventaja. Es como "forzar" a la web a utilizar la fuente que le pido */
 
-__Esquema general del body__ -->>
 
-- imagen a la izquierda- texto en el centro (agregarle un fondo al box del texto)
-
-__correcciones pendientes__
-tamaño de las imagenes en el header
-
-*/
-
+/*para todos*/
 *{
     margin: 0px;
     padding: 0px;
@@ -39,7 +28,7 @@ body{
 
 :root{
 
-    /* Colores */
+    /* Colores: hay colores que pueden variar pero siempre cumple con colores entre tonalidades verdes, grises, blancos y negros. */
     --negro: #000;
     --gris-oscuro: #222222d0;
     --blanco: #fff;
@@ -98,7 +87,7 @@ img {
 }
 
 /* =======================================================
-   ESTILOS BASE / ESCRITORIO (Pantallas Grandes)
+            ESTILOS ENCABEZADO (HEADER Y NAVBAR)
    ======================================================= */
 /* Encabezado y barra de navegacion */
 header {
@@ -193,7 +182,7 @@ header .main-nav {
 }
 
 /* =======================================================
-   MEDIA QUERY: Comportamiento Responsive Barra de Navegacion (Celulares/Tablets)
+   MEDIA QUERY: Comportamiento Responsive -forzada por media query- Barra de Navegacion
    ======================================================= */
 @media (max-width: 991.98px) {
     header {
@@ -205,7 +194,7 @@ header .main-nav {
         display: inline-block; 
     }
 
-    /* Forzamos a que el colapso se posicione de forma absoluta debajo del header */
+    /* esto forza a que en el colapso de la barra de navegación se posicione de forma absoluta y sin problemas debajo del header */
     header .main-nav.collapse {
         position: absolute;
         top: 105%;
@@ -216,10 +205,10 @@ header .main-nav {
         -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
         border-radius: var(--border-radius-m);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        transition: all 0.35s ease; /* Transición suave de Bootstrap */
+        transition: all 0.35s ease; /* Transición suave del Bootstrap */
     }
 
-    /* Dejamos que Bootstrap controle el flujo del display, pero aseguramos la lista interna */
+    /* con esto Bootstrap controla el flujo del display, pero aseguramos la lista desplegable interna */
     .main-nav .main-nav-list {
         flex-direction: column;
         width: 100%;
@@ -241,7 +230,7 @@ header .main-nav {
 
     /* Dropdown integrado al menú vertical */
     .main-nav .dropdown-menu {
-        position: static; /* Rompe el flotado absoluto original de Bootstrap */
+        position: static; /* esto rompe el flotado absoluto original de Bootstrap */
         transform: none;
         float: none;
         width: 100%;
@@ -286,7 +275,7 @@ header .main-nav {
     100% { background-position: 0 50%; }
 }
 
-/* Contenedor interno: Ahora controla el espacio céntrico real */
+/* Contenedor interno: Ahora controla el espacio de forma centrada */
 .section-content {
     display: flex;
     align-items: center;
@@ -359,9 +348,9 @@ header .main-nav {
 
 @media (max-width: 992px) {
     /* =======================================================
-                        HERO PRINCIPAL
+                        HERO PRINCIPAL (MEDIA QUERY)
    ======================================================= */
-    /* 1. Cambiamos height fijo por min-height para que la sección se estire si el texto es largo */
+    /* Se cambia height fijo por min-height para que la sección se estire si el texto es largo */
     .section-hero {
         height: auto; 
         min-height: 100vh;
@@ -369,14 +358,14 @@ header .main-nav {
         padding-bottom: 40px;
     }
 
-    /* 2. Cambiamos el orden visual: primero el texto, abajo la imagen */
+    /* Se cambia el orden visual: primero el texto, abajo la imagen */
     .section-hero .section-content {
         flex-direction: column;
-        gap: 40px; /* Reducimos el espacio exagerado entre el botón y la imagen */
+        gap: 40px; /* se reduce el espacio exagerado entre el botón y la imagen */
         text-align: center; /* Centramos el texto para una estética mobile clásica */
     }
 
-    /* 3. Permitimos que el bloque de texto use el ancho disponible en el centro */
+    /* esto hace que el bloque de texto use el ancho que queda libre en el centro */
     .section-hero .hero-details {
         max-width: 100%;
         display: flex;
@@ -384,7 +373,7 @@ header .main-nav {
         align-items: center; /* Centra el botón horizontalmente en móviles */
     }
 
-    /* 4. Achicamos un poco la imagen en celulares para que no ocupe toda la pantalla */
+    /* Esto achica un poco la imagen en celulares para que no ocupe toda la pantalla */
     .section-hero .hero-image-wrapper {
         flex: 0 0 auto;
         width: 80%; /* Ocupa el 80% del ancho del celular */
@@ -393,7 +382,7 @@ header .main-nav {
 }
 
 /* =======================================================
-            HERO COMPARTIDO
+                    HERO COMPARTIDO
    ======================================================= */
 .hero-inner-page {
     width: 100%;
@@ -412,7 +401,7 @@ header .main-nav {
     text-align: center;
 }
 
-/* Título */
+/* Título del hero */
 .hero-inner-page .inner-title-gradient {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-wight-bold);
@@ -444,7 +433,7 @@ header .main-nav {
 }
 
 /* =======================================================
-   RESPONSIVE (Celulares)
+        RESPONSIVE por media query forzada (Celulares)
    ======================================================= */
 @media (max-width: 992px) {
     .hero-inner-page {
@@ -466,6 +455,7 @@ main{
     background-color: #f4f7f5;
 }
 
+/*fondo de gradiente segun hero de cada página*/
 .contact-hero{
    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/vecteezy_ai-generated-curved-metallic-structures-with-dynamic_38814222.jpeg) no-repeat center center / cover;
 }
@@ -488,7 +478,7 @@ main{
 
 
 /* =======================================================
-   REGLAS GENERALES COMPARTIDAS
+            ALGUNAS REGLAS GENERALES COMPARTIDAS
    ======================================================= */
 .section-title {
     text-align: center;
@@ -509,17 +499,17 @@ main{
 }
 
 
-/*section-midle. Centramos el contenido y agregamos detalles elegantes*/
+/*.section-midle Centramos el contenido y agregamos detalles más "elegantes"*/
 
 .section-middle {
-    background-color: #d5ffe5; /* Un fondo blanco-verdoso ecológico muy sutil */
+    background-color: #d5ffe5;
     padding: 90px 20px;
     display: flex;
     justify-content: center;
 }
 
 .section-content-action {
-    max-width: 850px; /* Evita que las líneas sean infinitas, mejorando la lectura */
+    max-width: 850px; /* Con esto se evita que las líneas sean infinitas, mejorando la lectura */
     text-align: center;
 }
 
@@ -536,7 +526,8 @@ main{
     line-height: 1.8;
 }
 
-/*section-problems. imagen izq- texto der*/
+
+/*section-problems. imagen a la izq. y texto a la der.*/
 
 .section-problems {
     max-width: var(--site-max-width);
@@ -574,7 +565,7 @@ main{
     margin-bottom: 30px;
 }
 
-/* El botón solicitado para los artículos */
+/* El botón para los artículos */
 .btn-problem {
     display: inline-block;
     padding: 10px 28px;
@@ -606,9 +597,6 @@ main{
     flex-direction: row-reverse;
 }
 
-
-/*__ elementos del body__*/
-
 /* section-program */
 .section-program {
     display: flex;
@@ -622,7 +610,7 @@ main{
     border-radius: 20px; 
 }
 
-.section-program img{ /*imagen descartada temporalmente, queda por si encuentro una imagen adecuada*/
+.section-program img{ 
     width: 30%;
     height: 250px;
     object-fit: cover;
@@ -697,7 +685,7 @@ main{
     background: var(--verde-1);
 }
 
-/*__section__*/
+/* para algunas imagenes de sections*/
 
 
 section img{
@@ -708,7 +696,7 @@ section img{
 }
 
 /* =======================================================
-   NUEVA SECCIÓN: LÍNEA DE TIEMPO VERTICAL (TIMELINE)
+            LÍNEA DE TIEMPO VERTICAL(nosotros.hmtl)
    ======================================================= */
 .timeline-section {
     padding: 80px 20px;
@@ -828,7 +816,7 @@ section img{
     background-color: var(--verde-3);
 }
 
-/* RESPONSIVE: Transforma la línea de tiempo a una sola columna en celulares */
+/* RESPONSIVE FORZADO POR MEDIA QUERY: Transforma la línea de tiempo a una sola columna en celulares */
 @media screen and (max-width: 768px) {
     .timeline-container::after {
         left: 31px;
@@ -857,7 +845,7 @@ section img{
 
 
 /* =======================================================
-   NUEVA SECCIÓN: TARJETAS DE PILARES (MODERN GRID CARDS)
+                TARJETAS DE PILARES 
    ======================================================= */
 .section-title.gris{
     color: var(--gris-oscuro);
@@ -889,7 +877,7 @@ section img{
     filter: drop-shadow(5px 5px 10px black);
 }
 
-/* Decoración superior con tu color de acento brillante */
+/* Decoración superior */
 .pilar-card::before {
     content: '';
     position: absolute;
@@ -900,7 +888,7 @@ section img{
     background: linear-gradient(90deg, var(--verde-1), var(--verde-3));
 }
 
-/* Badge numérico elegante */
+/* Badge numérico */
 .pilar-badge {
     position: absolute;
     top: 25px;
@@ -911,7 +899,7 @@ section img{
     opacity: 0.7;
 }
 
-/* Icono redondo contenedor */
+/* Icono redondo del contenedor */
 .pilar-icon {
     display: flex;
     align-items: center;
@@ -939,7 +927,7 @@ section img{
     z-index: 2;
 }
 
-/* Capa de imagen oculta que se revela con transiciones finas */
+/* Capa de imagen oculta con transiciones */
 .pilar-bg-image {
     position: absolute;
     top: 0;
@@ -974,7 +962,7 @@ section img{
     box-shadow: 0 15px 35px rgba(44, 90, 69, 0.2);
 }
 
-/* Cuando pases el mouse, cambiamos las propiedades de los textos para legibilidad sobre foto */
+/* se cambia las propiedades de los textos para legibilidad sobre foto */
 .pilar-card:hover h3, 
 .pilar-card:hover p,
 .pilar-card:hover .pilar-badge {
@@ -988,14 +976,14 @@ section img{
     transform: rotate(-5deg) scale(1.05);
 }
 
-/* Mostramos la imagen de fondo de manera fluida */
+/* Mostramos la imagen de fondo de manera fluida (transparencia) */
 .pilar-card:hover .pilar-bg-image {
     opacity: 1;
     transform: scale(1);
 }
 
 
-/*=============== AGREGADOS EXCLUSIVOS PARA LA SECCIÓN EQUIPO ===============*/
+/*=============== SECCIÓN EQUIPO ===============*/
 
 /* Contenedor de las redes sociales */
 .card__socials {
@@ -1006,7 +994,7 @@ section img{
   padding-top: 0.75rem;
 }
 
-/* Estilo para los links de GitHub y LinkedIn */
+/* el estilo de los links de GitHub y LinkedIn */
 .social-link {
   font-size: var(--small-font-size, .813rem);
   text-decoration: none;
@@ -1020,13 +1008,13 @@ section img{
   text-decoration: underline;
 }
 
-/* Ajuste opcional por si el nombre de la persona queda muy grande */
+/* esto es un ajuste que puede ser opcional por si el nombre de la persona queda muy grande */
 .user-name {
   font-size: 1.15rem;
   margin-bottom: 0.25rem;
 }
 
-/*=============== SECCIÓN PROGRAMAS COMPARTIDO TAMBIEN EN NOSOTROS CARTAS DE FUNDADORES (VERTICAL / RESPONSIVE EN TODO DISPOSITIVO) ===============*/
+/*=============== SECCIÓN PROGRAMAS COMPARTIDO TAMBIEN EN NOSOTROS CARTAS DE FUNDADORES  ===============*/
 .section-programs-wrapper {
   display: grid;
   place-items: center;
@@ -1046,8 +1034,7 @@ section img{
 
 .card__container {
   display: grid;
-  /* Escritorio: 3 columnas. En pantallas medianas pasa a 2 y en celulares a 1 sola de forma automática */
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* 3 columnas donde en pantallas medianas por ahí pasa a 2 y en celulares a 1 sola */
   gap: 4rem 2rem;
   width: 100%;
   max-width: var(--site-max-width, 1120px);
@@ -1064,7 +1051,7 @@ section img{
   border-radius: 1.5rem;
 }
 
-/* Imagen en formato vertical (Portrait) constante en cualquier resolución */
+/* Imagen en formato vertical -retrato- constante en cualquier tamaño de pantalla */
 .card__img {
   width: 100%;
   height: 550px; /* Alto vertical optimizado */
@@ -1073,7 +1060,7 @@ section img{
   transition: transform .4s ease;
 }
 
-/* Caja de datos flotante inteligente (Usa porcentajes, no valores fijos) */
+/* Caja de datos flotante */
 .card__data {
   width: calc(100% - 3rem);
   background-color: var(--container-color, #fff);
@@ -1086,8 +1073,7 @@ section img{
   right: 0;
   margin-inline: auto;
   opacity: 0;
-  /* La empujamos hacia abajo un 70% de su propia altura para ocultarla de forma elástica */
-  transform: translateY(70%); 
+  transform: translateY(70%); /* La empujamos hacia abajo un 70% de su propia altura para ocultarla de forma elástica */
   transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1), opacity .4s ease;
 }
 
@@ -1127,41 +1113,41 @@ section img{
   color: var(--verde-1, #2c5a45);
 }
 
-/*=============== INTERACCIONES HOVER (MÉTODO ULTRA RESPONSIVE) ===============*/
+/*=============== INTERACCIONES HOVER ===============*/
 
-/* Al pasar el mouse, permitimos que la caja sobresalga de la tarjeta si es necesario */
+/* cuando el cursor pase por la carta permite que la caja sobresalga de la tarjeta si es necesario :) */
 .card__article:hover {
   overflow: initial;
 }
 
-/* Al sacar el mouse, esperamos que baje la tarjeta antes de ocultar el overflow */
+/* cualdo el cursor de mouse deja de tocar la card esta baja la tarjeta antes de ocultar el overflow */
 .card__article:not(:hover) {
   transition-delay: .3s;
   overflow: hidden;
 }
 
-/* Efecto hover sobre la data: sube limpiamente a su posición natural */
+/* el efecto hace que la data de la card suba a su posición natural */
 .card__article:hover .card__data {
   opacity: 1;
-  transform: translateY(0); /* Sube exactamente lo necesario sin importar cuántas líneas tenga el texto */
+  transform: translateY(0); /* Sube todo sin importar cuanto texto tenga*/
 }
 
-/* Ligero zoom a la foto vertical de fondo para darle vida */
+/* un sutil zoom a la foto de la card de fondo para darle una vida xd */
 .card__article:hover .card__img {
   transform: scale(1.03);
 }
 
-/*=============== DETALLES EXCLUSIVOS MÓVIL ===============*/
+/*=============== DETALLES EXCLUSIVOS MÓVIL FORZADO POR MEDIA QUERY (PERDON POR TANTA MEDIA QUERY)===============*/
 @media screen and (max-width: 768px) {
   .section-programs-wrapper {
     padding-block: 3rem;
   }
   .card__container {
-    grid-template-columns: 1fr; /* Una sola columna: se apilan verticalmente perfectas */
-    gap: 5rem 0; /* Espaciado saludable entre tarjetas apiladas */
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 5rem 0; /* un buen espaciado entre tarjetas apiladas */
   }
   .card__article {
-    max-width: 100%; /* Aprovecha bien el ancho del celular */
+    max-width: 100%; /* con esto se aprovecha bien el ancho del celular */
   }
 }
 
@@ -1171,7 +1157,8 @@ section img{
   .card__img { height: 380px; } /* Un toque más bajas en pantallas diminutas */
 }
 
-/*section-help*/
+
+/*section-help (SECCION DE AYUDA)*/
 
 .section-help {
     padding: 100px 20px;
@@ -1193,7 +1180,7 @@ section img{
 /* Footer */
 footer {
     width: calc(100% - 30px); 
-    position: relative; /* Corregido: 'flex' no es un valor válido para position, lo ideal es relative o block */
+    position: relative; /* Se el valor 'flex' porque no sería un valor correcto para la position, lo ideal sería relative o block */
     bottom: 0;
     background: linear-gradient(45deg, #080808da, #121514, #3a3e3e);
     background-size: 300% 300%;
@@ -1210,7 +1197,7 @@ footer {
     height: auto;     
 }
 
-.footer-wrap { /* Cambiado de .container */
+.footer-wrap { /* algunos cambios */
     width: 90%;
     margin: auto;
     display: flex;
@@ -1233,7 +1220,7 @@ footer {
     transition: all 0.5s ease;
 }
 
-.footer-col-1 { /* Cambiado de .col-1 */
+.footer-col-1 { /* algunos cambios de .col-1 */
     flex-basis: 30%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1246,7 +1233,7 @@ footer {
     padding-top: 15px;
 }
 
-.footer-col-2 { /* Cambiado de .col-2 */
+.footer-col-2 { /* otros cambios de .col-2 */
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1271,7 +1258,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-col-3 { /* Cambiado de .col-2 */
+.footer-col-3 { 
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1296,7 +1283,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-col-4 { /* Cambiado de .col-3 */
+.footer-col-4 { 
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1321,7 +1308,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-col-5 { /* Cambiado de .col-4 */
+.footer-col-5 { 
     flex-basis: 20%;
     padding: 10px;
     margin-bottom: 20px;
